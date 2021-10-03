@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ATM</title>
+  <script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <style>
+.pincode{
+  text-security: disc;
+  -webkit-text-security: disc;
+  -moz-text-security: disc;
+}
+</style>
+</head>
+<body ng-app="angular">
+
+<div style="background-color:#ccc; padding:2px; height:700px; width:500; border:2px outset black";>
+
+  <div ng-controller="mainP">
+  <h1>Hello, Welcome to ATM</h1>
+   <label>Pin</label>
+   <input type="text" placeholder="Enter your Pin" name="pincode" ng-model="Pin" class="pincode" inputmode="numeric" maxlength="4" >
+   <button type="submit" ng-click="Onclickmain()" ng-show="!main"> Click </button> </p>
+  
+  <form ng-show="main">
+
+    <h2 >Balance account = {{num3}}</h2>
+      <div ng-controller="MainController">
+    <ul>
+      <li> {{ list[0]}} </li>
+      <li> {{ list[1]}} </li>
+    </ul>
+  </div>
+
+<h2>Withdraw</h2>
+<div ng-controller = "getdifference" ng-init = "num3" class="text">
+Enter Amount: <input type="number" ng-model="num2">
+<input type="button" ng-model="diff" ng-click="diff(num3,num2)" value="Enter">
+<br>
+Amount {{difference}}
+
+
+
+<br>
+</div>
+<h2>Deposit</h2>
+<div ng-controller = "getadd" ng-int = "num3" class="text">
+	Enter Amount : <input type="number" ng-model="num4">
+	<input type="button" ng-model="add" ng-click="add(num4,num3)" value="Enter">
+	<br>
+	Amount {{sum}}
+</div>
+  </form>
+ </div>
+
+
+
+  <script src ="js/app.js"></script>
+  <script src = "js/MainController/MainController.js"></script>
+</body>
+</html>
